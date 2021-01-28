@@ -1,0 +1,28 @@
+<h3><a class="btn btn-secondary" href="/desk"><i class="fa fa-plus"></i> Create New</a> Desk List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Desk Number</th>
+            <th>Floor</th>
+            <th>Address</th>
+            <th>Office Location</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.deskNumber}}</td>
+            <td>{{this.floor}}</td>
+            <td>{{this.address}}</td>
+            <td>{{this.officeLocation}}</td>
+            <td>
+                <a href="/desk/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/desk/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+
